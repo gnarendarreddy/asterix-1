@@ -1,0 +1,1 @@
+this file will shows the process of creating github account

@@ -35,6 +35,21 @@
 	</div>
 	<!-- ./ password -->
 
+
+        <div style="margin-bottom:25px;">
+            <h5>Security image:</h5>
+          
+            <img src="captcha.php" class="form_captcha" />
+            <div class="lines">Verification (Type what you see):</div>
+            <input type="text" name="captcha" value="" class="captcha" />
+            <button onclick="checkCaptcha()">Check it</button>
+        </div>
+        
+        </div>
+
+
+
+
 	<!-- Login button -->
 	<div class="control-group">
 		<div class="controls">

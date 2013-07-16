@@ -1227,7 +1227,7 @@ h4 small {
 /* line 84, ../sass/twitter-bootstrap/_type.scss */
 .page-header {
   padding-bottom: 9px;
-  margin: 20px 0 30px;
+ margin: 80px 0 30px;
   border-bottom: 1px solid #eeeeee; }
 
 /* line 96, ../sass/twitter-bootstrap/_type.scss */
@@ -4144,7 +4144,11 @@ input[type="submit"].btn {
 /* line 69, ../sass/twitter-bootstrap/_alerts.scss */
 .alert-block {
   padding-top: 14px;
-  padding-bottom: 14px; }
+padding-bottom: 14px;
+position: absolute;
+top: 54px;
+left: 612px;
+width: 604px; }
 
 /* line 74, ../sass/twitter-bootstrap/_alerts.scss */
 .alert-block > p,
@@ -4761,7 +4765,7 @@ input[type="submit"].btn {
   left: 0;
   display: block;
   float: left;
-  margin: 0 10px 0 0; }
+  margin: 5px 10px 0 0; }
 
 /* line 229, ../sass/twitter-bootstrap/_navbar.scss */
 .navbar .nav.pull-right {
@@ -9025,3 +9029,5 @@ body {
   h2,
   h3 {
     page-break-after: avoid; } }
+.captcha_example{background:#FFF;width:865px;font-size:80%;border:1px #000 solid;margin:0.5em 10% 0.5em;padding:1em 2em 2em;-moz-border-radius: 3px;-webkit-border-radius: 3px}
+.lines{margin:10px 0}

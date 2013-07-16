@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>
             @section('title')
-            Laravel Radiate
+            Asterix 
             @show
         </title>
         <meta name="description" content="">
@@ -16,11 +16,15 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="{{ asset('assets/styles/css/main.css')}} ">
+        <link rel="stylesheet" href="{{ asset('assets/styles/css/slidder.css')}} ">
 
         <!-- JS -->
         <script src="{{ asset('assets/scripts/js/vendor/modernizr-2.6.2.min.js') }}"></script>
-
+        <script src="{{asset('assets/scripts/js/vendor/jquery.min.js')}}"></script>
+        <script src="{{asset('assets/scripts/js/vendor/md5.js')}}"></script>
+         <script src="{{asset('assets/scripts/js/vendor/main.js')}}"></script>
         <!-- Images -->
+        <link rel="logo" sizes="144x58" href="{{ asset('assets/images/logo.gif.png') }}">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('assets/images/apple-touch-icon-144-precomposed.png') }}">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('assets/images/apple-touch-icon-114-precomposed.png') }}">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('assets/images/apple-touch-icon-72-precomposed.png') }}">
@@ -28,7 +32,26 @@
 
         <!-- ICO -->
         <link rel="shortcut icon" href="favicon.ico">
+<style type="text/css">
 
+
+html { height: 100% }
+body {
+       background-color: #dddddd;
+       background-image: -webkit-gradient(radial, 50% 0%,100,50% 150%,100, from(#333333), to(#dddddd));
+       background-image: -webkit-radial-gradient(50% 100%, #dddddd, #333333);
+       background-image: -moz-radial-gradient(50% 100%, #dddddd, #333333);
+       background-image: -o-radial-gradient(50% 100%, #dddddd, #333333);
+       background-image: -ms-radial-gradient(50% 100%, #dddddd, #333333);
+       background-image: radial-gradient(50% 100%, #dddddd, #333333);
+       color:#fff;
+       overflow: scroll;
+       height: 100%;
+       -webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+
+
+</style>
 
     </head>
     <body>
@@ -48,18 +71,35 @@
 
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li {{ (Request::is('/') ? 'class="active"' : '') }}><a href="{{ URL::to('') }}"><i class="icon-home"></i> Home</a></li>
+
+                            <li {{ (Request::is('/') ? 'class="active"' : '') }}><a href="{{ URL::to('') }}"><i></i><img src="/assets/images/logo.gif.png"/> </a></li>
+
+                            
+
                         </ul>
 
                         <ul class="nav pull-right">
                             @if (Auth::check())
                                 <li class="navbar-text">Logged in as {{ Auth::user()->fullName() }}</li>
                                 <li class="divider-vertical"></li>
-                                <li {{ (Request::is('account') ? 'class="active"' : '') }}><a href="{{ URL::to('account') }}">Account</a></li>
+                                <li {{ (Request::is('account/home1') ? 'class="active"' : '') }}><a href="{{ URL::to('account/home1') }}"><i class="icon-home"></i> Home</a></li>
+                                <li {{ (Request::is('account') ? 'class="active"' : '') }}><a href="{{ URL::to('account') }}">Update</a></li>
                                 <li><a href="{{ URL::to('account/logout') }}">Logout</a></li>
                             @else
+                                <li {{ (Request::is('/') ? 'class="active"' : '') }}><a href="{{ URL::to('') }}"><i class="icon-home"></i> Home</a></li>
+                                <li {{ (Request::is('account/about') ? 'class="active"' : '') }}><a href="{{ URL::to('account/about') }}">About</a></li>
                                 <li {{ (Request::is('account/login') ? 'class="active"' : '') }}><a href="{{ URL::to('account/login') }}">Login</a></li>
+                                
+                                
                                 <li {{ (Request::is('account/register') ? 'class="active"' : '') }}><a href="{{ URL::to('account/register') }}">Register</a></li>
+                                <li >
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-product"></i>Products <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li {{ (Request::is('account/pmp') ? 'class="active"' : '') }}><a href="{{ URL::to('account/pmp') }}">PMP</a></li>
+                                        <li {{ (Request::is('account/agile') ? 'class="active"' : '') }}><a href="{{ URL::to('account/agile') }}">Agile</a></li>
+                                     <li {{ (Request::is('account/game') ? 'class="active"' : '') }}><a href="{{ URL::to('account/game') }}">Game</a></li>
+                                    </ul>
+                                </li>
                             @endif
                         </ul>
                     </div>
@@ -81,8 +121,14 @@
             <!-- Content -->
             @yield('content')
             <!-- ./ content -->
+           
+            <div class="footer">
+                   <p>@copy rights reserved</p>
+        </div>
+
         </div>
         <!-- ./ container -->
+            
 
         <!-- jQuery -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -98,5 +144,6 @@
             // g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             // s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+        
     </body>
 </html>

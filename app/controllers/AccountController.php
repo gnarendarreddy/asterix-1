@@ -12,7 +12,14 @@ class AccountController extends AuthorizedController
 		'getLogin',
 		'postLogin',
 		'getRegister',
-		'postRegister'
+		'postRegister',
+		'getPmp',
+		'getAbout',
+		'getAgile',
+		'getHome1',
+		'getSimulate',
+		'getGame'
+		
 	);
 
 	/**
@@ -102,7 +109,7 @@ class AccountController extends AuthorizedController
 		//
 		if (Auth::check())
 		{
-			return Redirect::to('account');
+			return Redirect::to('account/home1');
 		}
 
 		// Show the page.
@@ -144,7 +151,7 @@ class AccountController extends AuthorizedController
 			{
 				// Redirect to the users page.
 				//
-				return Redirect::to('account')->with('success', 'You have logged in successfully');
+				return Redirect::to('account/home1')->with('success', 'You have logged in successfully');
 			}
 			else
 			{
@@ -240,4 +247,102 @@ class AccountController extends AuthorizedController
 		//
 		return Redirect::to('account/login')->with('success', 'Logged out with success!');
 	}
+
+	public function getPmp()
+	{		
+
+		// Redirect to the users page.
+		
+		/*if (Auth::check())
+		{
+			return Redirect::to('account/pmp')->with('success', 'PMP success!!');
+		}*/
+
+		// Show the page.
+		//
+		return View::make('account/pmp');
+		//
+		
+	}
+	
+
+	public function getAbout()
+	{		
+
+		/*if (Auth::check())
+		{
+			return Redirect::to('account/about')->with('success', 'About success!!');
+		}
+*/
+		// Show the page.
+		//
+		return View::make('account/about');
+		
+		// Redirect to the users page.
+		
+	}
+   public function getAgile()
+	{		
+
+		/*if (Auth::check())
+		{
+			return Redirect::to('account/about')->with('success', 'About success!!');
+		}
+*/
+		// Show the page.
+		//
+		return View::make('account/agile');
+		
+		// Redirect to the users page.
+		
+	}
+	   public function getHome1()
+	{		
+
+		/*if (Auth::check())
+		{
+			return Redirect::to('account/about')->with('success', 'About success!!');
+		}
+*/
+		// Show the page.
+		//
+		return View::make('account/home1');
+		
+		// Redirect to the users page.
+		
+	}
+	public function getSimulate()
+	{		
+
+		/*if (Auth::check())
+		{
+			return Redirect::to('account/about')->with('success', 'About success!!');
+		}
+*/
+		// Show the page.
+		//
+		return View::make('account/home1');
+		
+		// Redirect to the users page.
+		
+	}
+	
+public function getGame()
+	{		
+
+		/*if (Auth::check())
+		{
+			return Redirect::to('account/game')->with('success', 'About success!!');
+		}
+*/
+		// Show the page.
+		//
+		return View::make('account/game');
+		
+		// Redirect to the users page.
+		
+	}	
+
+
 }
+

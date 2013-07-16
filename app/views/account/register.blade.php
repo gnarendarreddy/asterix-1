@@ -9,7 +9,7 @@
 {{-- Content --}}
 @section('content')
 <div class="page-header">
-	<h1>Signup</h1>
+	<h2>Signup</h2>
 </div>
 <form method="post" action="" class="form-horizontal">
 	<!-- CSRF Token -->
